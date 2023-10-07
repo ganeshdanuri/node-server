@@ -1,6 +1,5 @@
 import cors from "cors";
 import express from "express";
-import { generate, count } from "random-words";
 import http from "http";
 import { Server } from "socket.io";
 import { mongoose } from "mongoose";

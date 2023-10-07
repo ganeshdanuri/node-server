@@ -233,6 +233,16 @@ io.on("connection", (socket) => {
   });
 });
 
+app.use((error, req, res, next) => {
+  if (error instanceof SyntaxError) {
+    // Handle JSON parsing errors here
+    console.error("JSON Parsing Error:", error);
+    res.status(400).json({ error: "Invalid JSON data" });
+  } else {
+    next();
+  }
+});
+
 app.listen(process.env.PORT || api_port, () => {
   console.log(`API Server is runiing on ${api_port}`);
 });

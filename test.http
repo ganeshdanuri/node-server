@@ -1,0 +1,6 @@
+POST https://chat-server-a943.onrender.com/search
+Content-Type: application/json
+
+{
+    "searchTerm": "ganesh",
+}
